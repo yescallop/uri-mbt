@@ -1,0 +1,5 @@
+{
+  "import": [
+    "yescallop/uri/table"
+  ]
+}

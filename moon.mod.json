@@ -1,0 +1,10 @@
+{
+  "name": "yescallop/uri",
+  "version": "0.1.0",
+  "readme": "README.md",
+  "repository": "https://github.com/yescallop/uri-mbt",
+  "license": "MIT",
+  "keywords": ["uri", "parser"],
+  "description": "A generic URI parser compliant with RFC 3986.",
+  "source": "src"
+}
