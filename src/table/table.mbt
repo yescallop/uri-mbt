@@ -1,10 +1,10 @@
-let table_len : Int = 256 + 3
+let table_len : Int = 128 + 3
 
-let index_pct_encoded : Int = 256
+let index_pct_encoded : Int = 128
 
-let index_ucschar : Int = 256 + 1
+let index_ucschar : Int = 128 + 1
 
-let index_iprivate : Int = 256 + 2
+let index_iprivate : Int = 128 + 2
 
 fn is_ucschar(x : Int) -> Bool {
   (x >= 0xa0 && x <= 0xd7ff) ||
@@ -24,11 +24,11 @@ pub struct T {
 
 pub fn new(bytes : Bytes) -> T {
   let table = FixedArray::make(table_len, false)
-  for i, byte in bytes {
+  for byte in bytes {
     if byte.to_int() >= 128 || byte == b'%' {
       abort("cannot allow non-ASCII byte or %")
     }
-    table[i] = true
+    table[byte.to_int()] = true
   }
   { table, }
 }
